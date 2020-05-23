@@ -1,0 +1,8 @@
+*.log
+
+node_modules
+
+.npm
+
+**/*.js
+**/*.js.map
