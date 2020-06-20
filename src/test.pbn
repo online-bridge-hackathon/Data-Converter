@@ -1,0 +1,53 @@
+[Event "1NT P 3NT 09/01/2020"]
+[Site "Nukkai Paris, France"]
+[Date "09/01/2020"]
+[Board "1"]
+[West ""]
+[North ""]
+[East ""]
+[South ""]
+[Dealer "S"]
+[Vulnerable "None"]
+[Deal "N:Q54.KQ986..KJ976 K83.AT.JT98.A854 J976.J43.KQ754.3 AT2.752.A632.QT2"]
+[Scoring "IMP"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result ""]
+[Auction "S"]
+1NT  Pass 3NT AP
+
+[Event "Men's Pairs - SPRING NABC 1970"]
+[Site "Portland, Oregon"]
+[Date "1970.03.14"]
+[Board "1"]
+[West "GIB"]
+[North "GIB"]
+[East "GIB"]
+[South "Al Howard"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:93.QT82.K5.JT864 AJ52.96.JT863.92 KQT74.KJ75.AQ2.7 86.A43.974.AKQ53"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "10"]
+[Score "NS 420"]
+[Stage "Final"]
+[Auction "N"]
+Pass Pass 1S 2C
+Pass Pass 2H Pass
+3H Pass 4H Pass
+Pass Pass
+[Play "W"]
+CK C4 C2 C7
+D4 DK DJ D2
+S6 S3 SA S4
+HA H2 H6 H5
+D7 D5 DT DA
+H4 H8 H9 HK
+H3 HT SJ HJ
+S8 S9 S5 S7
+C5 C6 C9 H7
+D9 C8 D3 DQ
+C3 CT S2 SK
+CA CJ D8 SQ
+CQ HQ D6 ST

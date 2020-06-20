@@ -1,6 +1,8 @@
 from flask import Flask, request
 from flask_cors import CORS
 from flask_restful import Resource, Api
+from pbn import parse_pbn_string
+
 
 app = Flask(__name__)
 CORS(app)
@@ -17,10 +19,10 @@ class Convert(Resource):
         if 'file' not in request.files:
             return {'status': 'no file'}
         file_obj = request.files['file'] 
-        deals = file_obj.read().decode('utf-8').split('\n\n')
-        print(deals)
+        deals = file_obj.read().decode('utf-8')
+        deals_json = parse_pbn_string(deals)
 
-        return {"status": "success"}
+        return deals_json
 
 api.add_resource(Convert, '/api/convert/<output>')
 
