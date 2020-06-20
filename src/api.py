@@ -14,7 +14,7 @@ class Convert(Resource):
     def get(self):
         return {'hello': 'world'}
 
-    def post(self, output):
+    def put(self, output):
         """Reads a file, verifies what type it is, and either converts it or rejects it"""
         if 'file' not in request.files:
             return {'status': 'no file'}
@@ -24,7 +24,7 @@ class Convert(Resource):
 
         return deals_json
 
-api.add_resource(Convert, '/api/convert/<output>')
+api.add_resource(Convert, '/api/boards/<output>')
 
 if __name__ == "__main__":
     app.run(debug=True)
