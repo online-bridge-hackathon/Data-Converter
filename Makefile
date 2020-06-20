@@ -2,7 +2,7 @@ DOCKER_REPO ?= gcr.io/online-bridge-hackathon-2020
 VERSION ?= $(shell cat VERSION)
 DOCKER_TAG=${DOCKER_REPO}/data-converter-api:${VERSION}
 
-EXTERNAL_ADDRES ?= dds.hackathon.globalbridge.app
+EXTERNAL_ADDRES ?= data-converter.hackathon.globalbridge.app
 
 DDS_K8S_NS ?= data-converter-api
 GCP_PROJECT ?= online-bridge-hackathon-2020

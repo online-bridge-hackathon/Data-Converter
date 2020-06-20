@@ -14,7 +14,7 @@ class Convert(Resource):
     def get(self):
         return {'hello': 'world'}
 
-    def put(self, output):
+    def post(self, output):
         """Reads a file, verifies what type it is, and either converts it or rejects it"""
         if 'file' not in request.files:
             return {'status': 'no file'}
@@ -28,6 +28,6 @@ api.add_resource(Convert, '/api/boards/<output>')
 
 if __name__ == "__main__":
     app.run(debug=True)
-    # curl -F "file=@/full/path/to/pbn" http://localhost:5000/api/convert/test
+    # curl -F "file=@/full/path/to/pbn" http://localhost:5000/api/boards/test
 
 
