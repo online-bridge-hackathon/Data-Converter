@@ -4,16 +4,16 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deployment
   labels:
-    app: data-converter-api
+    app: {{ .Release.Name }}
 spec:
   replicas: {{ int .Values.replicas }}
   selector:
     matchLabels:
-      app: data-converter-api
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: data-converter-api
+        app: {{ .Release.Name }}
     spec:
       containers:
       - name: api
@@ -25,9 +25,9 @@ spec:
         - flask
         - run
         - --host=0.0.0.0
-        - --port=5000
+        - --port={{ .Values.targetPort }}
         ports:
-          - containerPort: 5000
+          - containerPort: {{ .Values.targetPort }}
 ---
 apiVersion: v1
 kind: Service
@@ -35,10 +35,10 @@ metadata:
   name: {{ .Release.Name }}-service
 spec:
   selector:
-    app: data-converter-api
+    app: {{ .Release.Name }}
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: {{ .Values.targetPort }}
     protocol: TCP
     name: http
 ---
@@ -50,7 +50,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     cert-manager.io/cluster-issuer: letsencrypt-production
   labels:
-    app: data-converter-api
+    app: {{ .Release.Name }}
   name: {{ .Release.Name }}-ingress
 spec:
   tls:

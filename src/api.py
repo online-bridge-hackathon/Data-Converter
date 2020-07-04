@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+import sys
+sys.path.append('/home/kiat/.local/lib/python3.7/site-packages/')
+
 from flask import Flask, request
 from flask_cors import CORS
 from flask_restful import Resource, Api

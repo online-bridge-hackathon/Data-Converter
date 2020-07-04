@@ -1,4 +1,5 @@
-image: gcr.io/online-bridge-hackathon-2020/data-converter-api:0.0.0-dev
+image: gcr.io/globalbridge-app/converter
 replicas: 1
-externalHostname: data-converter.hackathon.globalbridge.app
-tlsSecret: data-converter-api-tls-secret
+externalHostname: converter.prod.globalbridge.app
+tlsSecret: converter-tls-secret
+targetPort: 5000
