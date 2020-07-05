@@ -1,7 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.7
 
 import sys
-sys.path.append('/home/kiat/.local/lib/python3.7/site-packages/')
+import os
+sys.path.append('os.getcwd()/python-libs')
+sys.path.append('/usr/lib/python3.7')
 
 from flask import Flask, request
 from flask_cors import CORS
