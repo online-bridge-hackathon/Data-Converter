@@ -1,0 +1,18 @@
+{
+    "D": "Date and Time",
+    "T": "Title and Author",
+    "L": "Location",
+    "E": "Event or Main Heading",
+    "S": "Session, Stage or Subheading",
+    "F": "Form of Scoring",
+    "K": "Team Names and Carryovers",
+    "N": "Names of Players and Room or Table",
+    "B": "Board Number",
+    "H": "W:A8765.QT.K9.AT87:J42.AJ7632.J.632:QT3.85.Q86.KQJ54:",
+    "A": "Auction (dealer, vul and call sequence)",
+    "C": "Contract and Declarer",
+    "P": "Play sequence",
+    "R": "Result (tricks won) and Score",
+    "M": "Makes at Double-Dummy",
+    "I": "Item List"
+}

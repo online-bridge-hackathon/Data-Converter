@@ -1,0 +1,18 @@
+{
+    "D": "Date and Time",
+    "T": "Title and Author",
+    "L": "Location",
+    "E": "Event or Main Heading",
+    "S": "Session, Stage or Subheading",
+    "F": "Form of Scoring",
+    "K": "Team Names and Carryovers",
+    "N": "Names of Players and Room or Table",
+    "B": "Board Number",
+    "H": "Hands (cards held by each player)",
+    "A": "Auction (dealer, vul and call sequence)",
+    "C": "Contract and Declarer",
+    "P": "Play sequence",
+    "R": "Result (tricks won) and Score",
+    "M": "Makes at Double-Dummy",
+    "I": "Item List"
+}
