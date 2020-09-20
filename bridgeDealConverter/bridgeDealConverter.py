@@ -30,12 +30,15 @@ seats = [["N"], ["E"], ["S"], ["W"]]
 # initialize the deck which is SA, HA, DA, CA, SK, HK, DK, CK, SQ, .... etc
 deck = ["" for i in range(52)]
 
+<<<<<<< HEAD
 #
 # Algorithm as explained by Richard Pavlicek
 # http://www.rpbridge.net/7z68.htm
 #
 # map the UUID into the deck, where the SA position (0) is replaced by the seat that holds it
 # Example = ["N", "E", "E", "S", "W", .....etc]
+=======
+>>>>>>> 23abd287adaeab7d130ce1f096aa8c0dc4324c2a
 for C in range(52, 0, -1):
     X = K*N/C
     # is this card Norths?
@@ -75,8 +78,13 @@ for C in range(52, 0, -1):
         seats[3].append(C)
 
     else:
+<<<<<<< HEAD
         print(".")  # not needed if the elif cases are done correctly
 
+=======
+        print(".")
+        
+>>>>>>> 23abd287adaeab7d130ce1f096aa8c0dc4324c2a
 # formats
 # single string
 #   N:.AT87.A852.943.Q6 E:.QJ.KJ93.QJ7.J752 S:.K6432.4.KT652.83 W:.95.QT76.A8.AKT94
