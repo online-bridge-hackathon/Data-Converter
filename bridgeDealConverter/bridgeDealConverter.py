@@ -26,7 +26,6 @@ seats = [["N"], ["E"], ["S"], ["W"]]
 
 deck = ["" for i in range(52)]
 
-
 for C in range(52, 0, -1):
     X = K*N/C
 
@@ -67,20 +66,7 @@ for C in range(52, 0, -1):
 
     else:
         print(".")
-
-#print(deck)
-
-#print(suits[0])
-#print(suits[1])
-#print(suits[2])
-#print(suits[3])
-
-#print(seats[0])
-#print(seats[1])
-#print(seats[2])
-#print(seats[3])
-
-
+        
 # formats
 # single string
 #   N:.AT87.A852.943.Q6 E:.QJ.KJ93.QJ7.J752 S:.K6432.4.KT652.83 W:.95.QT76.A8.AKT94
