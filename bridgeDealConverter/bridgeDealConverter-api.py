@@ -140,7 +140,7 @@ def lambda_handler(event, context):
     elif output == "rbn":
         b = {B["rbn"][0]:B["rbn"][1]}
     elif output == "lin":
-        b = B["lin"][1]
+        b = {"md":B["lin"][1]}
 
     return {
         'statusCode': 200,
