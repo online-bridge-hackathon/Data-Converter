@@ -1,9 +1,13 @@
 #!/usr/bin/env python3.8
 
-import sys, json, re
+import json
+from sys import argv
+from re import sub
 
 # deal supplied as an argument for conversion
-I = int(sys.argv[1], 16)
+I = int(argv[1], 16)
+
+output = argv[2]
 
 # Total number of possible deals = 52!/(13!)^4
 K = int("0xAD55E315634DDA658BF49200",16)
@@ -30,15 +34,12 @@ seats = [["N"], ["E"], ["S"], ["W"]]
 # initialize the deck which is SA, HA, DA, CA, SK, HK, DK, CK, SQ, .... etc
 deck = ["" for i in range(52)]
 
-<<<<<<< HEAD
 #
 # Algorithm as explained by Richard Pavlicek
 # http://www.rpbridge.net/7z68.htm
 #
 # map the UUID into the deck, where the SA position (0) is replaced by the seat that holds it
 # Example = ["N", "E", "E", "S", "W", .....etc]
-=======
->>>>>>> 23abd287adaeab7d130ce1f096aa8c0dc4324c2a
 for C in range(52, 0, -1):
     X = K*N/C
     # is this card Norths?
@@ -78,13 +79,8 @@ for C in range(52, 0, -1):
         seats[3].append(C)
 
     else:
-<<<<<<< HEAD
         print(".")  # not needed if the elif cases are done correctly
 
-=======
-        print(".")
-        
->>>>>>> 23abd287adaeab7d130ce1f096aa8c0dc4324c2a
 # formats
 # single string
 #   N:.AT87.A852.943.Q6 E:.QJ.KJ93.QJ7.J752 S:.K6432.4.KT652.83 W:.95.QT76.A8.AKT94
@@ -106,8 +102,8 @@ B["lin"] = {}
 
 # cycle the seats
 A = ["" for i in range(4)]
+# special array for LIN as they have suit names before 
 L = ["" for i in range(4)]
-
 
 for k in range(4):
     suit = ["" for i in range(4)]
@@ -122,23 +118,27 @@ for k in range(4):
                 a = ""
         A[k] = A[k] + "." + suit[j]
         L[k] = L[k] + suits[j][0] + suit[j]
-    B["human"][seats[k][0]] = re.sub(r'^.{3}','',A[k])
-    B["pbn"][seats[k][0]] = re.sub(r'^.{3}','',A[k])
+    B["human"][seats[k][0]] = sub(r'^.{3}','',A[k])
+    B["pbn"][seats[k][0]] = sub(r'^.{3}','',A[k])
     B["lin"][seats[k][0]] = L[k]
 
 B["pbn"][1] = ''.join(["N:",B["pbn"]["N"],' ',B["pbn"]["E"],' ',B["pbn"]["S"],' ',B["pbn"]["N"]])
 B["rbn"][1] = ''.join(["N:",B["pbn"]["N"],':',B["pbn"]["E"],':',B["pbn"]["S"],':',B["pbn"]["N"]])
 B["lin"][1] = ','.join([B["lin"]["S"],B["lin"]["W"],B["lin"]["N"],B["lin"]["E"]])
 
-# print(*A)
-print("human = " + json.dumps(B["human"]))
+# print formats
 
-b = {B["pbn"][0]:B["pbn"][1]}
-print("pbn = " + json.dumps(b))
+b = ""
+if output == "human":
+    b = B["human"]
+elif output == "pbn":
+    b = {B["pbn"][0]:B["pbn"][1]}
+elif output == "rbn":
+    b = {B["rbn"][0]:B["rbn"][1]}
+elif output == "lin":
+    b = B["lin"][1]
 
-
-b = {B["rbn"][0]:B["rbn"][1]}
-print("rbn = " + json.dumps(b))
-
-b = B["lin"][1]
-print("lin = " + "{" + json.dumps(b) + "}")
+print({
+    'statusCode': 200,
+    'body': json.dumps(b)
+})
