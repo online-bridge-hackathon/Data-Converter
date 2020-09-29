@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "app_function": "dealConverter.app",
+        "aws_region": "eu-west-2",
+        "profile_name": "default",
+        "project_name": "dealconverter",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-bshl8wgdy",
+        "domain": "converter.aws.globalbridge.app",
+        "certificate_arn": "arn:aws:acm:us-east-1:613256704476:certificate/b96a2ffb-d1a5-4d84-af5e-e646c1027cc9"
+    }
+}
